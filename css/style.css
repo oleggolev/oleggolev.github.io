@@ -710,7 +710,7 @@
 
 .sec6-image-right {
     border-radius: 5px;
-    box-shadow: 5px 10px 15px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.5);
     transition: all 0.2s ease-in-out;
 }
 
@@ -720,7 +720,7 @@
 
 .sec6-image-left {
     border-radius: 5px;
-    box-shadow: -5px 10px 15px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: -5px 10px 15px rgba(0, 0, 0, 0.5);
     transition: all 0.2s ease-in-out;
 }
 
