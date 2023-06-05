@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>My Portfolio</title>
+    <title>Oleg Golev's Portfolio</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
@@ -37,7 +37,7 @@
     <!-- Navbar Start -->
     <nav id="navbar" class="black navbar navbar-expand-lg fixed-top">
         <!-- Brand -->
-        <a id="nav-logo" class="navbar-brand" href="index.html">Mubeen</a>
+        <a id="nav-logo" class="navbar-brand" href="index.html">OLEG GOLEV</a>
 
         <!-- Button collapsable -->
         <button class="navbar-toggler" id="nav-btn" type="button" data-toggle="collapse"
@@ -54,10 +54,10 @@
                     <a class="nav-link nav-custom-link" href="#about-me">About</a>
                 </li>
                 <li class="nav-item navigation-list">
-                    <a class="nav-link nav-custom-link" href="#my-portfolio">Portfolio</a>
+                    <a class="nav-link nav-custom-link" href="#projects">Projects</a>
                 </li>
                 <li class="nav-item navigation-list">
-                    <a class="nav-link nav-custom-link" href="#section-contact">Contact</a>
+                    <a class="nav-link nav-custom-link" href="#papers">Papers</a>
                 </li>
             </ul>
         </div>
@@ -81,68 +81,193 @@
             <div class="row">
                 <div class="col text-center">
                     <div class="primary-heading">
-                        Creative <span class="fw-bold primary-heading-bold">Work</span>
+                        <span class="fw-bold primary-heading-bold">Oleg Golev</span>
                     </div>
+                    <br>
                     <div class="paragraph mx-auto mt-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias vitae debitis velit maxime
-                        facilis quae maiores optio ut eveniet, aspernatur, cupiditate saepe consequuntur cumque
-                        distinctio, error itaque ipsum sunt assumenda!
+                        I am a 2nd year MSE student studying CS at <b style='color:orange !important;'>Princeton
+                            University</b>.<br><br>
+                        This website details my projects and exploratory research during the past few years. <br>My
+                        interests converged on DBMS,
+                        high-concurrency design, and edge-cloud computing.
                     </div>
-                    <a type="button" class="section-2-button fw-bold">Read More</a>
+                    <a type="button" onclick=" window.open('https://www.linkedin.com/in/oleg-golev/','_blank')"
+                        class="section-2-button fw-bold">Visit My LinkedIn<br>to See my Work Experience</a>
                 </div>
             </div>
         </section>
 
+
+        <!-- Divider -->
+        <div class="bold-line"></div>
 
         <!-- SECTION NO 3 -->
-        <section class="container-fluid section-3">
-            <div class="row section-3-inner">
-                <div class="col-lg-6 section-3-inner-col-left text-center">
-                    <div class="primary-heading section-3-heading text-lg-end">
-                        I Am <span class="fw-bold">Designer</span>
-                    </div>
-                    <div class="section-3-image-left text-lg-end">
-                        <img src="./images/Section-3-image-1.jpg" class="img-fluid sec3-images sec3-img-left" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-6 section-3-inner-col-right text-center mt-5 mt-lg-0">
-                    <div class="section-3-image-right text-lg-start">
-                        <img src="./images/Section-3-image-2.jpg" class="img-fluid sec3-images sec3-img-right" alt="">
-                    </div>
-                    <div class="section-3-button-right text-lg-start">
-                        <button class="sec3-btn-right text-uppercase fw-bold" onclick="location.href='#'">
-                            Read More
-                        </button>
+        <section id="projects" class="container-fluid section-5">
+            <div class="row">
+                <div class="col">
+                    <div class="section-5-text text-center mx-auto">
+                        Some Cool Things I Coded Up:
                     </div>
                 </div>
             </div>
-            <div class="background-section-3"></div>
-        </section>
 
+            <div style="max-width:1000px; margin:0 auto;">
 
-        <!-- SECTION NO 4 -->
-        <section class="container-fluid section-4">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="section-4-left text-center text-lg-end pe-0 pe-lg-5">
-                        <span class="section-4-heading text__light">We</span>
-                        <span class="section-4-heading text__light">Build</span>
-                        <span class="section-4-heading-bold fw-bolder">Digital</span>
+                <div class="row mt-4 mt-md-5 work-gallery-row">
+                    <div class="col-sm-6">
+                        <div class="card text-center custom-card mt-5 mt-lg-0">
+                            <div class="card-body">
+                                <div class="card-heading">Bitcoin Mining Network Simulator</div>
+                                <div class="card-para"><a class="card-link" target="_blank"
+                                        href="https://github.com/Blockchains-Princeton/COS-ECE470-fa2022">COS
+                                        470: Principles of Blockchains (Fall 2022)</a>
+                                </div>
+                                <br>
+                                <img src="./images/rust.png" style="width:25px;max-height:25px;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card text-center custom-card mt-5 mt-lg-0">
+                            <div class="card-body">
+                                <div class="card-heading">Raft and KV Storage Service w/ Raft</div>
+                                <div class="card-para"><a class="card-link" target="_blank"
+                                        href="https://www.cs.princeton.edu/courses/archive/spring21/cos418/index.html">COS
+                                        418: Distributed Systems (Spring 2021)</a>
+                                </div>
+                                <br>
+                                <img src="./images/go.png" style="width:50px;max-height:25px;">
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="section-4-right text-center text-lg-start">
-                        <div class="sec4-blank"></div>
-                        <div class="sec4-text">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus est dolor iure voluptates.
-                            Facere nostrum porro, velit veniam, architecto veritatis, libero a repellat quod quas atque
-                            totam accusamus obcaecati delectus dicta! Suscipit ratione qui, nihil voluptates error
-                            distinctio optio doloremque?
+            </div>
+            <div style="max-width:1000px; margin:0 auto;">
+                <div class="row mt-4 mt-md-5 work-gallery-row">
+                    <div class=" col-sm-6">
+                        <div class="card text-center custom-card mt-5 mt-lg-0">
+                            <div class="card-body">
+                                <div class="card-heading">Chandy Lamport Snapshot Algorithm</div>
+                                <div class="card-para"><a class="card-link" target="_blank"
+                                        href="https://www.cs.princeton.edu/courses/archive/spring21/cos418/index.html">COS
+                                        418: Distributed Systems (Spring 2021)</a>
+                                </div>
+                                <br>
+                                <img src="./images/go.png" style="width:50px;max-height:25px;">
+                            </div>
                         </div>
-                        <div class="section-4-button">
-                            <button class="sec4-btn text-uppercase fw-bold" onclick="location.href='#'">Read
-                                More</button>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card text-center custom-card mt-5 mt-lg-0">
+                            <div class="card-body">
+                                <div class="card-heading">MIPS ISA Cycle-Accurate CPU Simulator</div>
+                                <div class="card-para"><a class="card-link" target="_blank"
+                                        href="https://github.com/C-Loftus/Project3/blob/main/Project3%20S2021.pdf">COS
+                                        375: Computer Architecture (Spring 2021)</a>
+                                </div>
+                                <br>
+                                <img src="./images/c++.png" style="width:25px;width:25px;">
+                            </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div style="max-width:1000px; margin:0 auto;">
+                <div class="row mt-4 mt-md-5 work-gallery-row">
+                    <div class="col-sm-6">
+                        <div class="card text-center custom-card mt-5 mt-lg-0">
+                            <div class="card-body">
+                                <div class="card-heading">x86 OS Kernel w/ Unix-like File System</div>
+                                <div class="card-para"><a class="card-link" target="_blank"
+                                        href="https://www.cs.princeton.edu/courses/archive/fall20/cos318/index.html">COS
+                                        318: Operating Systems (Fall 2020)</a>
+                                </div>
+                                <br>
+                                <img src="./images/c.png" style="width:25px;width:25px;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card text-center custom-card mt-5 mt-lg-0">
+                            <div class="card-body">
+                                <div class="card-heading">HTTP Proxy w/ DNS Pre-Fetching</div>
+                                <div class="card-para"><a class="card-link" target="_blank"
+                                        href="https://www.cs.princeton.edu/courses/archive/spr20/cos461/index.html">COS
+                                        461: Computer Networks (Spring 2020)</a>
+                                </div>
+                                <br>
+                                <img src="./images/go.png" style="width:50px;max-height:25px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br><br><br><br><br>
+
+            <div style="max-width:1200px; margin:0 auto; text-align: justify;">
+                <div class="row section-6-inner mx-auto">
+                    <div class="col-lg-6 sec-6-left  pe-0 pe-lg-4">
+                        <div class="section-6-heading">
+                            <img src="./images/mq_favicon.png" width="45" height="45">
+                            <span class="fw-bold">MealQueue</span>
+                        </div>
+                        <div class="section-6-para">
+                            MealQueue is designed for use by Late Meal, an off-hours dining facility at Princeton
+                            University. The MealQueue application allows students to place orders with Late Meal ahead
+                            of time, thereby eliminating the wait time associated with ordering, preparing, and paying.
+                            MealQueue helps the Late Meal staff by allowing them to digitally interact with a queue
+                            of food orders, replacing the current pen-and-paper system. MealQueue also enables
+                            Campus Dining administrators to monitor order volume via a dashboard with graphs
+                            and statistics generated directly on the website.
+
+                            <br><br>
+                            Unfortunately, the rollout of the application was postponed and later canceled due to the
+                            University’s response to the COVID pandemic which involved the temporary closure of Late
+                            Meal.
+                        </div>
+                        <div class="section-6-button">
+                            <a class="sec6-btn text-uppercase fw-bold" onclick="location.href='#'">View
+                                Demo</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 sec-6-right mt-lg-0 mt-5">
+                        <a href="#"><img src="./images/mealqueue.png" class="img-fluid sec6-image" alt=""></a>
+                    </div>
+                </div>
+
+                <br><br><br><br><br>
+
+                <div class="row section-6-inner mx-auto">
+                    <div class="col-lg-6 sec-6-left  pe-0 pe-lg-4">
+                        <div class="section-6-heading">
+                            <img src="./images/tc_favicon.png" width="45" height="45">
+                            <span class="fw-bold">TigerCrush</span>
+                        </div>
+                        <div class="section-6-para">
+                            TigerCrush allows any Princeton University student to log in and list their crushes.
+                            Until a match is made, a user is identified to their crushees as a "secret admirer."
+                            If two people have a crush on each other, the love birds are revealed to each other, and
+                            thus a match is made.
+                            <br><br>
+                            The application was launched during the COVID pandemic, quickly gathered over 1000 unique
+                            visitors, got was featured in <b style='color:orange !important;'>
+                                <a class="card-link" target="_blank"
+                                    href="https://www.dailyprincetonian.com/article/2020/11/isolated-students-turn-to-tiger-crush">
+                                    this article</a></b> by The Daily Princetonian.
+                            <br><br>
+                            The code is publicly accessible in the following <b><a class="card-link" target="_blank"
+                                    href="https://www.dailyprincetonian.com/article/2020/11/isolated-students-turn-to-tiger-crush">
+                                    GitHub repository</a></b>.
+
+                        </div>
+                        <div class="section-6-button">
+                            <a class="sec6-btn text-uppercase fw-bold" onclick="location.href='#'">View
+                                Demo</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 sec-6-right mt-lg-0 mt-5">
+                        <a href="#"><img src="./images/tigercrush.png" class="img-fluid sec6-image" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -151,373 +276,129 @@
         <!-- Divider -->
         <div class="bold-line"></div>
 
-
-        <!-- SECTION NO 5 -->
-        <section id="my-portfolio" class="container-fluid section-5">
+        <!-- SECTION NO 4 -->
+        <section id="papers" class="container-fluid section-5">
             <div class="row">
                 <div class="col">
                     <div class="section-5-text text-center mx-auto">
-                        We Design People Inspired Experiences That Create Positive Change In People's Lives.
-                    </div>
-                    <div class="section-5-icon text-center">
-                        <i class="bi bi-chevron-double-down sec5-icon"></i>
+                        Some Papers I Wrote:
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col text-center">
-                    <div class="sec5-portfolio-head">
-                        View Portfolio
-                    </div>
-                </div>
-            </div>
+            <br><br><br>
 
-            <div class="row mt-4 mt-md-5 work-gallery-row">
-                <div class="masonry">
-                    <!-- Work 1 -->
-                    <div class="grid">
-                        <img src="./images/work-1.jpg" class="img-fluid image-work">
-                        <div class="grid__body">
-                            <div class="relative">
-                                <a class="grid__link" target="_blank" href="#"></a>
-                                <p class="grid__author">BY Mubeen Ahmad</p>
-                            </div>
-                            <div class="mt-auto">
-                                <span class="grid__tag">#Work 1</span>
-                            </div>
+            <div style="max-width:1200px; margin:0 auto; text-align: justify;">
+                <div class="row section-6-inner mx-auto">
+                    <div class="col-lg-6 sec-6-left pe-0 pe-lg-4">
+                        <div class="section-6-heading text-center">
+                            <span class="fw-bold">Survey of TinyML Methods for Detecting Humpback Whale
+                                Vocalizations</span>
+                        </div>
+                        <div class="section-6-para">
+                            In this study, we explore the tradeoffs between accuracy, model size, and training time for
+                            humpback whale vocalization detection models. This project serves as an introduction to and
+                            a surface-level investigation of TinyML techniques, including pruning, post-training
+                            quantization, quantization-aware training, TFLite, and smart feature selection. Our findings
+                            highlight the potential of using TFLite as a baseline for creating efficient models
+                            while showing the importance of domain-specific knowledge in further optimizing model
+                            accuracy and size.
+                        </div>
+                        <div class="section-6-button text-center">
+                            <a class="sec6-btn text-uppercase fw-bold" onclick="location.href='#'">Download PDF</a>
                         </div>
                     </div>
-                    <!-- Work 2 -->
-                    <div class="grid">
-                        <img src="./images/work-2.jpg" class="img-fluid image-work">
-                        <div class="grid__body">
-                            <div class="relative">
-                                <a class="grid__link" target="_blank" href="#"></a>
-                                <p class="grid__author">BY Mubeen Ahmad</p>
-                            </div>
-                            <div class="mt-auto">
-                                <span class="grid__tag">#Work 2</span>
-                            </div>
-                        </div>
+                    <div class="col-lg-6 sec-6-right mt-lg-0 mt-5">
+                        <a href="#"><img src="./images/whale_hor.png" class="img-fluid sec6-image-right" alt=""></a>
                     </div>
-                    <!-- Work 3 -->
-                    <div class="grid">
-                        <img src="./images/work-3.jpg" class="img-fluid image-work">
-                        <div class="grid__body">
-                            <div class="relative">
-                                <a class="grid__link" target="_blank" href="#"></a>
-                                <p class="grid__author">BY Mubeen Ahmad</p>
-                            </div>
-                            <div class="mt-auto">
-                                <span class="grid__tag">#Work 3</span>
-                            </div>
-                        </div>
+                </div>
+
+                <br><br><br><br><br>
+
+                <div class="row section-6-inner mx-auto">
+                    <div class="col-lg-6 sec-6-right mt-lg-0 mt-5">
+                        <a href="#"><img src="./images/whale_hor.png" class="img-fluid sec6-image-left" alt=""></a>
                     </div>
-                    <!-- Work 4 -->
-                    <div class="grid">
-                        <img src="./images/work-4.jpg" class="img-fluid image-work">
-                        <div class="grid__body">
-                            <div class="relative">
-                                <a class="grid__link" target="_blank" href="#"></a>
-                                <p class="grid__author">BY Mubeen Ahmad</p>
-                            </div>
-                            <div class="mt-auto">
-                                <span class="grid__tag">#Work 4</span>
-                            </div>
+                    <div class="col-lg-6 sec-6-left  pe-0 pe-lg-4">
+                        <div class="section-6-heading text-center">
+                            <span class="fw-bold">Survey of TinyML Methods for Detecting Humpback Whale
+                                Vocalizations</span>
                         </div>
-                    </div>
-                    <!-- Work 5 -->
-                    <div class="grid">
-                        <img src="./images/work-5.jpg" class="img-fluid image-work">
-                        <div class="grid__body">
-                            <div class="relative">
-                                <a class="grid__link" target="_blank" href="#"></a>
-                                <p class="grid__author">BY Mubeen Ahmad</p>
-                            </div>
-                            <div class="mt-auto">
-                                <span class="grid__tag">#Work 5</span>
-                            </div>
+                        <div class="section-6-para">
+                            In this study, we explore the tradeoffs between accuracy, model size, and training time for
+                            humpback whale vocalization detection models. This project serves as an introduction to and
+                            a surface-level investigation of TinyML techniques, including pruning, post-training
+                            quantization, quantization-aware training, TFLite, and smart feature selection. Our findings
+                            highlight the potential of using TFLite as a baseline for creating efficient models
+                            while showing the importance of domain-specific knowledge in further optimizing model
+                            accuracy and size.
                         </div>
-                    </div>
-                    <!-- Work 6 -->
-                    <div class="grid">
-                        <img src="./images/work-6.jpg" class="img-fluid image-work">
-                        <div class="grid__body">
-                            <div class="relative">
-                                <a class="grid__link" target="_blank" href="#"></a>
-                                <p class="grid__author">BY Mubeen Ahmad</p>
-                            </div>
-                            <div class="mt-auto">
-                                <span class="grid__tag">#Work 6</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Work 7 -->
-                    <div class="grid">
-                        <img src="./images/work-7.jpg" class="img-fluid image-work">
-                        <div class="grid__body">
-                            <div class="relative">
-                                <a class="grid__link" target="_blank" href="#"></a>
-                                <p class="grid__author">BY Mubeen Ahmad</p>
-                            </div>
-                            <div class="mt-auto">
-                                <span class="grid__tag">#Work 7</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Work 8 -->
-                    <div class="grid">
-                        <img src="./images/work-8.jpg" class="img-fluid image-work">
-                        <div class="grid__body">
-                            <div class="relative">
-                                <a class="grid__link" target="_blank" href="#"></a>
-                                <p class="grid__author">BY Mubeen Ahmad</p>
-                            </div>
-                            <div class="mt-auto">
-                                <span class="grid__tag">#Work 8</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Work 9 -->
-                    <div class="grid">
-                        <img src="./images/work-9.jpg" class="img-fluid image-work">
-                        <div class="grid__body">
-                            <div class="relative">
-                                <a class="grid__link" target="_blank" href="#"></a>
-                                <p class="grid__author">BY Mubeen Ahmad</p>
-                            </div>
-                            <div class="mt-auto">
-                                <span class="grid__tag">#Work 9</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Work 10 -->
-                    <div class="grid">
-                        <img src="./images/work-10.jpg" class="img-fluid image-work">
-                        <div class="grid__body">
-                            <div class="relative">
-                                <a class="grid__link" target="_blank" href="#"></a>
-                                <p class="grid__author">BY Mubeen Ahmad</p>
-                            </div>
-                            <div class="mt-auto">
-                                <span class="grid__tag">#Work 9</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Work 11 -->
-                    <div class="grid">
-                        <img src="./images/work-11.jpg" class="img-fluid image-work">
-                        <div class="grid__body">
-                            <div class="relative">
-                                <a class="grid__link" target="_blank" href="#"></a>
-                                <p class="grid__author">BY Mubeen Ahmad</p>
-                            </div>
-                            <div class="mt-auto">
-                                <span class="grid__tag">#Work 9</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Work 12 -->
-                    <div class="grid">
-                        <img src="./images/work-12.jpg" class="img-fluid image-work">
-                        <div class="grid__body">
-                            <div class="relative">
-                                <a class="grid__link" target="_blank" href="#"></a>
-                                <p class="grid__author">BY Mubeen Ahmad</p>
-                            </div>
-                            <div class="mt-auto">
-                                <span class="grid__tag">#Work 9</span>
-                            </div>
+                        <div class="section-6-button text-center">
+                            <a class="sec6-btn text-uppercase fw-bold" onclick="location.href='#'">Download PDF</a>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="row">
-                <div class="section-5-button mt-4 mt-sm-5 text-center">
-                    <button class="sec5-btn text-uppercase fw-bold" onclick="location.href='#'">View More</button>
-                </div>
-            </div>
-        </section>
+                <br><br><br><br><br>
 
-        <!-- SECTION NO 6 -->
-        <section class="container-fluid section-6">
-            <div class="row section-6-inner mx-auto">
-                <div class="col-lg-6 sec-6-left  pe-0 pe-lg-4">
-                    <div class="section-6-heading">
-                        <span class="fw-bold">Music Band</span> Website
+                <div class="row section-6-inner mx-auto">
+                    <div class="section-6-heading text-center">
+                        Survey of TinyML Methods for Detecting Humpback Whale Vocalizations
                     </div>
                     <div class="section-6-para">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique iste nesciunt repellendus!
-                        Nulla, quod voluptatum consequuntur ipsa minus perferendis, incidunt repellendus est dolores
-                        animi tempora adipisci. Perferendis, doloremque ab autem amet possimus commodi voluptate?
-                        Aspernatur.
+                        <br>
+                        In this study, we explore the tradeoffs between accuracy, model size, and training time for
+                        humpback whale vocalization
+                        detection models. We investigate the potential of using TensorFlow Lite (TFLite) and feature
+                        selection techniques to
+                        create smaller and more efficient models for low-power devices. We develop a custom Keras
+                        model using the pre-trained
+                        humpback whale model as a baseline, achieving 96.13% accuracy. We then train a TFLite model
+                        that achieves 76.25%
+                        accuracy but is only 5% of the size of the Keras model. Additionally, we experiment with
+                        different features, specifically mel-frequency cepstral coefficients (MFCCs), as inputs to a a
+                        VGG block-based CNN to
+                        showcase their higher
+                        performance (81.99% vs 68.14% accuracy), faster runtime, and smaller model size advantages
+                        over using the reference
+                        waveform features. Our findings highlight the potential of using TFLite as a baseline for
+                        creating efficient models
+                        while showing the importance of domain-specific knowledge in further optimizing model
+                        accuracy and size.
                     </div>
-                    <div class="section-6-button">
-                        <a class="sec6-btn text-uppercase fw-bold" onclick="location.href='#'">View Project</a>
+                    <div class="section-6-button text-center">
+                        <a class="sec6-btn text-uppercase fw-bold" onclick="location.href='#'"><br>Download PDF</a>
                     </div>
                 </div>
-                <div class="col-lg-6 sec-6-right mt-lg-0 mt-5">
-                    <a href="#"><img src="./images/music-band-website.png" class="img-fluid sec6-image" alt=""></a>
-                </div>
-            </div>
 
-            <div class="row section-6-inner mx-auto mt-5">
-                <div class="col-lg-6 sec-6-left  pe-0 pe-lg-4">
-                    <div class="section-6-heading">
-                        <span class="fw-bold">Coffee Cup</span> Website
+                <br><br><br>
+
+                <div class="row section-6-inner mx-auto">
+                    <div class="section-6-heading text-center">
+                        Survey of TinyML Methods for Detecting Humpback Whale Vocalizations
                     </div>
                     <div class="section-6-para">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse, saepe adipisci distinctio
-                        repellendus aliquam pariatur. Reiciendis quam nisi fugiat molestias asperiores. Eius, veritatis?
-                        Corrupti nesciunt aperiam voluptates placeat, libero itaque?
+                        <br>
+                        In this study, we explore the tradeoffs between accuracy, model size, and training time for
+                        humpback whale vocalization
+                        detection models. We investigate the potential of using TensorFlow Lite (TFLite) and feature
+                        selection techniques to
+                        create smaller and more efficient models for low-power devices. We develop a custom Keras
+                        model using the pre-trained
+                        humpback whale model as a baseline, achieving 96.13% accuracy. We then train a TFLite model
+                        that achieves 76.25%
+                        accuracy but is only 5% of the size of the Keras model. Additionally, we experiment with
+                        different features, specifically mel-frequency cepstral coefficients (MFCCs), as inputs to a a
+                        VGG block-based CNN to
+                        showcase their higher
+                        performance (81.99% vs 68.14% accuracy), faster runtime, and smaller model size advantages
+                        over using the reference
+                        waveform features. Our findings highlight the potential of using TFLite as a baseline for
+                        creating efficient models
+                        while showing the importance of domain-specific knowledge in further optimizing model
+                        accuracy and size.
                     </div>
-                    <div class="section-6-button">
-                        <a class="sec6-btn text-uppercase fw-bold" onclick="location.href='#'">View Project</a>
-                    </div>
-                </div>
-                <div class="col-lg-6 sec-6-right mt-lg-0 mt-5">
-                    <a href="#"><img src="./images/coffee-cup-website.png" class="img-fluid sec6-image" alt=""></a>
-                </div>
-            </div>
-
-            <div class="row section-6-inner mx-auto mt-5">
-                <div class="col-lg-6 sec-6-left  pe-0 pe-lg-4">
-                    <div class="section-6-heading">
-                        <span class="fw-bold">Food Diary</span> Website
-                    </div>
-                    <div class="section-6-para">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis ratione sint mollitia dicta
-                        libero illum veniam ut cupiditate quia. Delectus est eveniet quibusdam reiciendis molestias ad
-                        vitae pariatur quis iste, dolores accusamus animi ullam error nesciunt corporis? Sint nisi
-                        soluta ut tempore dignissimos hic voluptatibus autem. Beatae neque iusto impedit dolorem ipsum
-                        rem facere vitae!
-                    </div>
-                    <div class="section-6-button">
-                        <a class="sec6-btn text-uppercase fw-bold" onclick="location.href='#'">View Project</a>
-                    </div>
-                </div>
-                <div class="col-lg-6 sec-6-right mt-lg-0 mt-5">
-                    <a href="#"><img src="./images/food-dairy-website.png" class="img-fluid sec6-image" alt=""></a>
-                </div>
-            </div>
-
-            <div class="row mt-5">
-                <div class="section-6-button-see-all text-center">
-                    <button class="sec6-btn-see-all text-uppercase fw-bold" onclick="location.href='#'">See All
-                        Projects</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION CONTACT -->
-        <section id="section-contact" class="container-fluid">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <div class="contact-heading">
-                        Contact Me
-                    </div>
-                    <div class="contact-para">
-                        Let's start a conversation
-                    </div>
-                </div>
-            </div>
-            <div class="row card-row-1">
-                <div class="col-lg-3 col-md-6">
-                    <div class="card text-center custom-card">
-                        <!-- <div class="card-header"></div> -->
-                        <div class="card-body">
-                            <div class="card-circle">
-                                <div class="card-circle-icon"><i class="fa fa-map-signs" aria-hidden="true"></i></div>
-                            </div>
-                            <div class="card-heading">Address</div>
-                            <div class="card-para">Street No ...</div>
-                        </div>
-                        <!-- <div class="card-footer"></div> -->
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="card text-center custom-card mt-5 mt-md-0">
-                        <!-- <div class="card-header"></div> -->
-                        <div class="card-body">
-                            <div class="card-circle">
-                                <div class="card-circle-icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
-                            </div>
-                            <div class="card-heading">Contact Number</div>
-                            <div class="card-para"><a class="card-link" href="https://wa.me/+92xxxxxxxxxx">+92xxx
-                                    xxxxxxx</div></a>
-                        </div>
-                        <!-- <div class="card-footer"></div> -->
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="card text-center custom-card mt-5 mt-lg-0">
-                        <!-- <div class="card-header"></div> -->
-                        <div class="card-body">
-                            <div class="card-circle">
-                                <div class="card-circle-icon"><i class="fa fa-paper-plane" aria-hidden="true"></i></div>
-                            </div>
-                            <div class="card-heading">Email Address</div>
-                            <div class="card-para"><a class="card-link"
-                                    href="mailto:email@example.com">email@example.com</div></a>
-                        </div>
-                        <!-- <div class="card-footer"></div> -->
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="card text-center custom-card mt-5 mt-lg-0">
-                        <!-- <div class="card-header"></div> -->
-                        <div class="card-body">
-                            <div class="card-circle">
-                                <div class="card-circle-icon"><i class="fa fa-globe" aria-hidden="true"></i></div>
-                            </div>
-                            <div class="card-heading">Website</div>
-                            <div class="card-para"><a class="card-link" href="#">yoursite.com</a></div>
-                        </div>
-                        <!-- <div class="card-footer"></div> -->
-                    </div>
-                </div>
-            </div>
-            <div class="row card-row-2">
-                <div class="col-lg-6 contact-image">
-                </div>
-                <div class="col-lg-6 contact-form-div">
-                    <form action="#" class="contact-form">
-                        <div class="form-group mt-3 mt-sm-4">
-                            <input type="text" id="custom-input1" class="form-control" placeholder="Your Name">
-                        </div>
-                        <div class="form-group mt-3 mt-sm-4">
-                            <input type="text" id="custom-input2" class="form-control" placeholder="Your Email">
-                        </div>
-                        <div class="form-group mt-3 mt-sm-4">
-                            <input type="text" id="custom-input3" class="form-control" placeholder="Subject">
-                        </div>
-                        <div class="form-group mt-3 mt-sm-4">
-                            <textarea name="" id="custom-textarea" cols="30" rows="7" class="form-control"
-                                placeholder="Message"></textarea>
-                        </div>
-                        <div class="form-group mt-3 mt-sm-4 form-button">
-                            <input type="submit" value="Send Message" id="contact-custom-button" class="btn">
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- SECTION NO 7 -->
-        <section class="container-fluid section-7">
-            <div class="row section-7-inner mx-auto text-center">
-                <div class="col">
-                    <div class="section-7-text">
-                        We want to stay in touch with you! Please follow us on social media so we can keep in touch.
-                    </div>
-                    <div class="section-7-icons">
-                        <a href="#" class="social-icons"><i class="bi bi-facebook icons"></i></a>
-                        <a href="#" class="social-icons"><i class="bi bi-twitter icons"></i></a>
-                        <a href="#" class="social-icons"><i class="bi bi-instagram icons"></i></a>
-                        <a href="#" class="social-icons"><i class="bi bi-linkedin icons"></i></a>
-                        <a href="#" class="social-icons"><i class="bi bi-pinterest icons"></i></a>
+                    <div class="section-6-button text-center">
+                        <a class="sec6-btn text-uppercase fw-bold" onclick="location.href='#'"><br>Download PDF</a>
                     </div>
                 </div>
             </div>
@@ -525,43 +406,6 @@
 
         <!-- SECTION NO 8 -->
         <footer class="container-fluid footer">
-            <div class="row section-footer-inner mx-auto">
-                <div class="col-sm-4">
-                    <div class="footer-headline">
-                        Headline
-                    </div>
-                    <div class="footer-text">
-                        Sample text
-                    </div>
-                </div>
-                <div class="col-sm-4 mt-5 mt-sm-0">
-                    <div class="footer-headline">
-                        Headline
-                    </div>
-                    <div class="footer-text">
-                        Sample text
-                    </div>
-                </div>
-                <div class="col-sm-4 mt-5 mt-sm-0">
-                    <div class="footer-headline">
-                        Headline
-                    </div>
-                    <div class="footer-text">
-                        Sample text
-                    </div>
-                </div>
-            </div>
-
-            <!-- Divider -->
-            <hr style="border-bottom: 1px solid #FFFFFF;">
-
-            <div class="row section-footer-inner">
-                <div class="col">
-                    <div class="footer-copyright text-center mt-2">
-                        Footer Text
-                    </div>
-                </div>
-            </div>
         </footer>
     </main>
 </body>
