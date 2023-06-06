@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>Oleg Golev's Portfolio</title>
+    <title>Oleg's Portfolio</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
@@ -37,7 +37,7 @@
     <!-- Navbar Start -->
     <nav id="navbar" class="black navbar navbar-expand-lg fixed-top">
         <!-- Brand -->
-        <a id="nav-logo" class="navbar-brand" href="index.html">OLEG GOLEV</a>
+        <a id="nav-logo" class="navbar-brand" href="index.html">OLEG ALEKSANDROVICH GOLEV</a>
 
         <!-- Button collapsable -->
         <button class="navbar-toggler" id="nav-btn" type="button" data-toggle="collapse"
@@ -48,10 +48,7 @@
         <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
             <ul id="nav-ul" class="navbar-nav">
                 <li class="nav-item navigation-list">
-                    <a class="nav-link nav-custom-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item navigation-list">
-                    <a class="nav-link nav-custom-link" href="#about-me">About</a>
+                    <a class="nav-link nav-custom-link" href="#about">About</a>
                 </li>
                 <li class="nav-item navigation-list">
                     <a class="nav-link nav-custom-link" href="#projects">Projects</a>
@@ -66,7 +63,7 @@
 
     <main class="container-fluid main p-0">
         <!-- SECTION NO 1 -->
-        <section class="container-fluid section-1">
+        <section id="about" class="container-fluid section-1">
             <div class="row section-1-inner">
                 <div class="col section-1-inner-col">
                     <div class="image-frame mx-auto my-5">
@@ -77,7 +74,7 @@
 
 
         <!-- SECTION NO 2 -->
-        <section id="about-me" class="container-fluid section-2">
+        <section class="container-fluid section-2">
             <div class="row">
                 <div class="col text-center">
                     <div class="primary-heading">
@@ -97,12 +94,12 @@
             </div>
         </section>
 
-
-        <!-- Divider -->
-        <div class="bold-line"></div>
-
         <!-- SECTION NO 3 -->
         <section id="projects" class="container-fluid section-5">
+            <!-- Divider -->
+            <div class="bold-line"></div>
+            <br>
+
             <div class="row">
                 <div class="col">
                     <div class="section-5-text text-center mx-auto">
@@ -161,8 +158,9 @@
                         <div class="card text-center custom-card mt-5 mt-lg-0">
                             <div class="card-body">
                                 <div class="card-heading">MIPS ISA Cycle-Accurate CPU Simulator</div>
-                                <div class="card-para"><a class="card-link" target="_blank"
-                                        href="https://github.com/C-Loftus/Project3/blob/main/Project3%20S2021.pdf">COS
+                                <div class="card-para">
+                                    <a class="card-link" href="./files/MIPS ISA CPU Simulator Guidelines - S2021.pdf"
+                                        target="_blank" download="MIPS ISA CPU Simulator Guidelines - S2021.pdf">COS
                                         375: Computer Architecture (Spring 2021)</a>
                                 </div>
                                 <br>
@@ -227,12 +225,12 @@
                             Meal.
                         </div>
                         <div class="section-6-button">
-                            <a class="sec6-btn text-uppercase fw-bold" onclick="location.href='#'">View
-                                Demo</a>
+                            <a class="sec6-btn text-uppercase fw-bold" href="https://alwaysjudgeabookbyitscover.com/"
+                                target="_blank">View Demo (U/C)</a>
                         </div>
                     </div>
                     <div class="col-lg-6 sec-6-right mt-lg-0 mt-5">
-                        <a href="#"><img src="./images/mealqueue.png" class="img-fluid sec6-image-right" alt=""></a>
+                        <img src="./images/mealqueue.png" class="img-fluid sec6-image-right" alt="">
                     </div>
                 </div>
 
@@ -257,27 +255,28 @@
                                     this article</a></b> by The Daily Princetonian.
                             <br><br>
                             The code is publicly accessible in the following <b><a class="card-link" target="_blank"
-                                    href="https://www.dailyprincetonian.com/article/2020/11/isolated-students-turn-to-tiger-crush">
+                                    href="https://github.com/alanjding/TigerCrush">
                                     GitHub repository</a></b>.
 
                         </div>
                         <div class="section-6-button">
-                            <a class="sec6-btn text-uppercase fw-bold" onclick="location.href='#'">View
-                                Demo</a>
+                            <a class="sec6-btn text-uppercase fw-bold" href="http://www.staggeringbeauty.com/"
+                                target="_blank">View Demo (U/C)</a>
                         </div>
                     </div>
                     <div class="col-lg-6 sec-6-right mt-lg-0 mt-5">
-                        <a href="#"><img src="./images/tigercrush.png" class="img-fluid sec6-image-right" alt=""></a>
+                        <img src="./images/tigercrush.png" class="img-fluid sec6-image-right" alt="">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Divider -->
-        <div class="bold-line"></div>
-
         <!-- SECTION NO 4 -->
         <section id="papers" class="container-fluid section-5">
+            <!-- Divider -->
+            <div class="bold-line"></div>
+            <br>
+
             <div class="row">
                 <div class="col">
                     <div class="section-5-text text-center mx-auto">
@@ -295,18 +294,21 @@
                                 Protocol</span>
                         </div>
                         <div class="section-6-para">
-                            In this project, we build a system that (1) watches the Ethereum mempool for Uniswap V2
-                            transactions in real time, (2) filters for transactions that are viable for a JIT liquidity
-                            attack, and (3) uses Streamlit to monitor the statistics, including the potential profit, of
-                            executing a JIT liquidity attack on the identified transactions. This system can help
-                            traders make better decisions about JIT liquidity provision as a potential trading strategy.
+                            In this project, we build a system (see <a class="card-link" target="_blank"
+                                href="https://github.com/oleggolev/JIT-Liquidity-Strategy">GitHub</a>)
+                            that (1) watches the Ethereum mempool for Uniswap V2 transactions in real time, (2) filters
+                            for transactions that are viable for a JIT liquidity attack, and (3) uses Streamlit to
+                            monitor the statistics, including the potential profit, of executing a JIT liquidity attack
+                            on the identified transactions. This system can help traders make better decisions about JIT
+                            liquidity provision as a potential trading strategy.
                         </div>
                         <div class="section-6-button text-center">
-                            <a class="sec6-btn text-uppercase fw-bold" onclick="location.href='#'">Download PDF</a>
+                            <a class="sec6-btn text-uppercase fw-bold" href="./files/Golev - JIT on Uniswap.pdf"
+                                target="_blank" download="Golev - JIT on Uniswap.pdf">Download PDF</a>
                         </div>
                     </div>
                     <div class="col-lg-6 sec-6-right mt-lg-0 mt-5">
-                        <a href="#"><img src="./images/JIT-Arch.png" class="img-fluid sec6-image-right" alt=""></a>
+                        <img src="./images/JIT-Arch.png" class="img-fluid sec6-image-right" alt="">
                     </div>
                 </div>
 
@@ -314,7 +316,7 @@
 
                 <div class="row section-6-inner mx-auto">
                     <div class="col-lg-6 sec-6-left pe-0 pe-lg-4">
-                        <a href="#"><img src="./images/whale_hor.png" class="img-fluid sec6-image-left" alt=""></a>
+                        <img src="./images/whale_hor.png" class="img-fluid sec6-image-left" alt="">
                     </div>
                     <div class="col-lg-6 sec-6-right mt-lg-0 mt-5">
                         <div class="section-6-heading text-center">
@@ -330,7 +332,9 @@
                             while showing the importance of domain-specific knowledge in feature selection.
                         </div>
                         <div class="section-6-button text-center">
-                            <a class="sec6-btn text-uppercase fw-bold" onclick="location.href='#'">Download PDF</a>
+                            <a class="sec6-btn text-uppercase fw-bold"
+                                href="./files/Golev - TinyML for Whale Detection.pdf" target="_blank"
+                                download="Golev - TinyML for Whale Detection.pdf">Download PDF</a>
                         </div>
                     </div>
                 </div>
@@ -353,11 +357,12 @@
                             manufacturers' and customers' incentives.
                         </div>
                         <div class="section-6-button text-center">
-                            <a class="sec6-btn text-uppercase fw-bold" onclick="location.href='#'">Download PDF</a>
+                            <a class="sec6-btn text-uppercase fw-bold" href="./files/Golev - Blockchain for IoT.pdf"
+                                target="_blank" download="Golev - Blockchain for IoT.pdf">Download PDF</a>
                         </div>
                     </div>
                     <div class="col-lg-6 sec-6-right mt-lg-0 mt-5">
-                        <a href="#"><img src="./images/iot.png" class="img-fluid sec6-image-right" alt=""></a>
+                        <img src="./images/iot.png" class="img-fluid sec6-image-right" alt="">
                     </div>
                 </div>
 
@@ -365,7 +370,7 @@
 
                 <div class="row section-6-inner mx-auto">
                     <div class="col-lg-6 sec-6-left pe-0 pe-lg-4">
-                        <a href="#"><img src="./images/bert.png" class="img-fluid sec6-image-left" alt=""></a>
+                        <img src="./images/bert.png" class="img-fluid sec6-image-left" alt="">
                     </div>
                     <div class="col-lg-6 sec-6-right mt-lg-0 mt-5">
                         <div class="section-6-heading text-center">
@@ -384,7 +389,8 @@
                             task over GloVe.
                         </div>
                         <div class="section-6-button text-center">
-                            <a class="sec6-btn text-uppercase fw-bold" onclick="location.href='#'">Download PDF</a>
+                            <a class="sec6-btn text-uppercase fw-bold" href="./files/Golev - Double Hard Debias.pdf"
+                                target="_blank" download="Golev - Double Hard Debias.pdf">Download PDF</a>
                         </div>
                     </div>
                 </div>
@@ -409,11 +415,12 @@
                             set.
                         </div>
                         <div class="section-6-button text-center">
-                            <a class="sec6-btn text-uppercase fw-bold" onclick="location.href='#'">Download PDF</a>
+                            <a class="sec6-btn text-uppercase fw-bold" href="./files/Golev - ML for Beatboxing.pdf"
+                                target="_blank" download="Golev - ML for Beatboxing.pdf">Download PDF</a>
                         </div>
                     </div>
                     <div class="col-lg-6 sec-6-right mt-lg-0 mt-5">
-                        <a href="#"><img src="./images/bbx.png" class="img-fluid sec6-image-right" alt=""></a>
+                        <img src="./images/bbx.png" class="img-fluid sec6-image-right" alt="">
                     </div>
                 </div>
 
@@ -421,7 +428,7 @@
 
                 <div class="row section-6-inner mx-auto">
                     <div class="col-lg-6 sec-6-left pe-0 pe-lg-4">
-                        <a href="#"><img src="./images/sensor.png" class="img-fluid sec6-image-left" alt=""></a>
+                        <img src="./images/sensor.png" class="img-fluid sec6-image-left" alt="">
                     </div>
                     <div class="col-lg-6 sec-6-right mt-lg-0 mt-5">
                         <div class="section-6-heading text-center">
@@ -440,7 +447,8 @@
                             calibrated the eTape sensor output with manual measurements to ensure accuracy.
                         </div>
                         <div class="section-6-button text-center">
-                            <a class="sec6-btn text-uppercase fw-bold" onclick="location.href='#'">Download PDF</a>
+                            <a class="sec6-btn text-uppercase fw-bold" href="./files/Golev - Water Depth Sensing.pdf"
+                                target="_blank" download="Golev - Water Depth Sensing.pdf">Download PDF</a>
                         </div>
                     </div>
                 </div>
