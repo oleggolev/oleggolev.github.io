@@ -147,7 +147,7 @@
 }
 
 .paragraph {
-    width: 80%;
+    width: 42%;
     font-size: 18px;
 }
 
@@ -682,6 +682,21 @@
     .sec5-btn {
         padding: 5px 15px;
         font-size: 10px;
+    }
+}
+
+/* Reordering elements for papers with the image on the left */
+.left-img-container {
+    display: flex;
+    flex-direction: row;
+}
+
+/* condition for screen size minimum of 500px */
+@media (max-width:1000px) {
+    .left-img {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        order: 1;
     }
 }
 
