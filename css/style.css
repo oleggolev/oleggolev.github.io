@@ -659,26 +659,6 @@
 }
 
 @media (max-width: 320px) {
-    .masonry .grid__body {
-        padding: 20px 20px;
-    }
-
-    .masonry .grid__tag {
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 320px) {
-    .thing .grid__body {
-        padding: 20px 20px;
-    }
-
-    .thing .grid__tag {
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 320px) {
     .sec5-btn {
         padding: 5px 15px;
         font-size: 10px;
@@ -691,8 +671,8 @@
     flex-direction: row;
 }
 
-/* condition for screen size minimum of 500px */
-@media (max-width:1000px) {
+/* condition for image / text reordering */
+@media (max-width:1024px) {
     .left-img {
         padding-top: 50px;
         padding-bottom: 50px;
@@ -856,11 +836,6 @@
     margin-top: 10px;
 }
 
-.card-row-1,
-.card-row-2 {
-    padding: 30px 50px;
-}
-
 .custom-card {
     padding: 0px 15px;
     border: none !important;
@@ -947,10 +922,6 @@
         margin-top: 6px;
     }
 
-    .card-row-2 {
-        padding: 20px 15px;
-    }
-
     .contact-form-div {
         padding: 20px !important;
     }
@@ -972,11 +943,6 @@
     .contact-para {
         font-size: 12px;
         letter-spacing: 2;
-    }
-
-    .card-row-1,
-    .card-row-2 {
-        padding: 20px 15px;
     }
 
     #custom-input1,
