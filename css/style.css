@@ -82,7 +82,8 @@
 /* SECTION NO 1 */
 
 .section-1 {
-    background-color: #F2F2F2;
+    background: url("https://picsum.photos/id/509/1280/710") no-repeat center;
+    background-size: cover;
     height: 450px;
     padding: 0px;
 }
