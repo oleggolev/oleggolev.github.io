@@ -1077,7 +1077,7 @@
 /* FOOTER */
 
 .footer {
-    padding: 50px 50px 30px 50px !important;
+    padding: 10px 40px 20px 40px !important;
     background-color: #000000;
 }
 
@@ -1087,7 +1087,7 @@
 
 @media (max-width: 426px) {
     .footer {
-        padding: 30px 30px 20px 30px !important;
+        padding: 50px 20px 10px 20px !important;
     }
 
     .footer-text {
