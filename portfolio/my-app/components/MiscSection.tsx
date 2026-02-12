@@ -55,7 +55,7 @@ export function MiscSection() {
       <h2 className="text-2xl font-semibold mb-6">✨ misc</h2>
 
       {/* Category Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+      <div className="cursor-pointer grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
         {CATEGORIES.map((category, index) => {
           const Icon = category.icon;
           const isActive = activeCategory === category.id;
