@@ -19,7 +19,7 @@ const CATEGORIES = [
   },
   {
     id: "drumming",
-    title: "World Drumming",
+    title: "Drumming",
     icon: Drum,
     description: "World percussion with Japanese & African music.",
     videos: [

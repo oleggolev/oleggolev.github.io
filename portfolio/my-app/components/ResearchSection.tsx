@@ -14,6 +14,16 @@ const TAG_COLORS: Record<string, string> = {
 
 const PAPERS = [
   {
+    id: "cryptoanalystbench",
+    title: "CryptoAnalystBench: Failures in Multi-Tool Long-Form LLM Analysis",
+    venue: "arXiv Preprint",
+    year: "2026",
+    image: "/images/cryptoanalystbench.png",
+    tag: "ml" as const,
+    authors: "Anushri Eswaran, Oleg Golev, Darshan Tank, Sidhant Rahi, Himanshu Tyagi",
+    url: "https://arxiv.org/abs/2602.11304",
+  },
+  {
     id: "oml",
     title: "OML: A Primitive for Reconciling Open Access with Owner Control in AI Model Distribution",
     venue: "NeurIPS LockLLM Workshop",
