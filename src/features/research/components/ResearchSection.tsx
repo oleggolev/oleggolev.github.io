@@ -1,4 +1,4 @@
-import { FileText } from 'lucide-react';
+import { FileText, ExternalLink, Monitor, Watch } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { SectionContainer } from '@/components/layout/SectionContainer';
 import { trackPaperClick } from '@/lib/utils';
@@ -18,7 +18,10 @@ const PAPERS = [
     image: '/images/cryptoanalystbench.png',
     tag: 'ml' as const,
     authors: 'Anushri Eswaran, Oleg Golev, Darshan Tank, Sidhant Rahi, Himanshu Tyagi',
-    url: 'https://arxiv.org/abs/2602.11304',
+    links: [
+      { type: 'paper', url: 'https://arxiv.org/abs/2602.11304', icon: FileText, label: 'paper' },
+      { type: 'code', url: 'https://github.com/sentient-agi/CryptoAnalystBench', icon: ExternalLink, label: 'code' },
+    ],
   },
   {
     id: 'oml',
@@ -28,7 +31,9 @@ const PAPERS = [
     image: '/images/oml.png',
     tag: 'ml' as const,
     authors: 'Zerui Cheng, Edoardo Contente, Benjamin Tsengel Finch, Oleg Aleksandrovich Golev, Jonathan Hayase, Andrew Miller, Niusha Moshrefi, Anshul Nasery, Sewoong Oh, Himanshu Tyagi, Pramod Viswanath',
-    url: 'https://openreview.net/forum?id=W3ryccayYs',
+    links: [
+      { type: 'paper', url: 'https://openreview.net/forum?id=W3ryccayYs', icon: FileText, label: 'paper' },
+    ],
   },
   {
     id: 'radical',
@@ -38,7 +43,9 @@ const PAPERS = [
     image: '/images/radical.png',
     tag: 'systems' as const,
     authors: 'Nicolaas Kaashoek, Oleg Golev, Austin Li, Amit Levy, Wyatt Lloyd',
-    url: 'https://dl.acm.org/doi/10.1145/3731569.3764831',
+    links: [
+      { type: 'paper', url: 'https://dl.acm.org/doi/10.1145/3731569.3764831', icon: FileText, label: 'paper' },
+    ],
   },
   {
     id: 'hapster',
@@ -48,13 +55,17 @@ const PAPERS = [
     image: '/images/hapster.png',
     tag: 'hci' as const,
     authors: 'Oleg Golev*, Michelle Huang*, Chanketya Nop*, Kritin Vongthongsri*, Andrés Monroy-Hernández, Parastoo Abtahi',
-    url: 'https://dl.acm.org/doi/epdf/10.1145/3613905.3650733',
+    links: [
+      { type: 'paper', url: 'https://dl.acm.org/doi/epdf/10.1145/3613905.3650733', icon: FileText, label: 'paper' },
+      { type: 'code-web', url: 'https://github.com/oleggolev/Hapster-Web', icon: Monitor, label: 'code-web' },
+      { type: 'code-watch', url: 'https://github.com/oleggolev/Hapster-Watch', icon: Watch, label: 'code-watch' },
+    ],
   },
 ];
 
 export function ResearchSection() {
-  const handlePaperClick = (paper: typeof PAPERS[0]) => {
-    trackPaperClick(paper.title, paper.venue);
+  const handlePaperClick = (paper: typeof PAPERS[0], linkType: string) => {
+    trackPaperClick(paper.title, `${linkType} - ${paper.venue}`);
   };
 
   return (
@@ -102,23 +113,26 @@ export function ResearchSection() {
                 <span className="font-bold">{paper.authors}</span>
               </p>
 
-              <div className="flex gap-2 mt-auto">
-                <a
-                  href={paper.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="no-underline cursor-pointer"
-                  onClick={() => handlePaperClick(paper)}
-                >
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="cursor-pointer inline-flex items-center gap-1 px-3 py-1 text-xs font-medium text-black bg-transparent border border-gray-300 rounded hover:bg-gray-50 transition-colors duration-300"
+              <div className="flex gap-2 mt-auto flex-wrap">
+                {paper.links.map((link) => (
+                  <a
+                    key={link.type}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="no-underline cursor-pointer"
+                    onClick={() => handlePaperClick(paper, link.label)}
                   >
-                    <FileText className="w-3 h-3" />
-                    paper
-                  </Button>
-                </a>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="cursor-pointer inline-flex items-center gap-1 px-3 py-1 text-xs font-medium text-black bg-transparent border border-gray-300 rounded hover:bg-gray-50 transition-colors duration-300"
+                    >
+                      <link.icon className="w-3 h-3" />
+                      {link.label}
+                    </Button>
+                  </a>
+                ))}
               </div>
             </div>
           </article>

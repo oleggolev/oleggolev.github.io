@@ -1,4 +1,4 @@
-import { FileText, ExternalLink } from 'lucide-react';
+import { FileText, ExternalLink, BookOpen } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { SectionContainer } from '@/components/layout/SectionContainer';
 import { trackProjectClick, trackLinkClick } from '@/lib/utils';
@@ -13,7 +13,23 @@ const TAG_COLORS: Record<string, string> = {
   privacy: '#ff6b6b',
 };
 
-const PROJECTS = [
+interface ProjectLink {
+  type: 'paper' | 'code' | 'blog';
+  url: string;
+  icon: React.ElementType;
+  label: string;
+}
+
+const PROJECTS: Array<{
+  id: string;
+  title: string;
+  year: string;
+  image: string;
+  tags: string[];
+  authors: string;
+  description: string;
+  links: ProjectLink[];
+}> = [
   {
     id: 'gradattack',
     title: 'Evaluating Gradient Inversion Defenses in Federated Learning on the Brain Tumor MRI Dataset',
@@ -22,8 +38,10 @@ const PROJECTS = [
     tags: ['ml', 'privacy'],
     authors: 'Oleg Golev',
     description: 'Analysis of gradient inversion attacks and defensive mechanisms in federated learning systems for medical imaging',
-    github: 'https://github.com/oleggolev/GradAttack-Med',
-    paper: '/files/Evaluating Gradient Inversion Defenses in Federated Learning on the Brain Tumor MRI Dataset.pdf',
+    links: [
+      { type: 'paper', url: '/files/Evaluating Gradient Inversion Defenses in Federated Learning on the Brain Tumor MRI Dataset.pdf', icon: FileText, label: 'paper' },
+      { type: 'code', url: 'https://github.com/oleggolev/GradAttack-Med', icon: ExternalLink, label: 'code' },
+    ],
   },
   {
     id: 'debiasing',
@@ -33,7 +51,9 @@ const PROJECTS = [
     tags: ['nlp', 'ml'],
     authors: 'Alan Ding, Oleg Golev, Alik Zalmover',
     description: 'Reproduced and extended the Double-Hard Debias algorithm using BERTbase to reduce word embeddings gender bias',
-    paper: '/files/Golev - Double Hard Debias.pdf',
+    links: [
+      { type: 'paper', url: '/files/Golev - Double Hard Debias.pdf', icon: FileText, label: 'paper' },
+    ],
   },
   {
     id: 'beatboxing',
@@ -43,7 +63,9 @@ const PROJECTS = [
     tags: ['deep-learning', 'audio'],
     authors: 'Oleg Golev',
     description: 'Deep neural network approach for automatic transcription of human beatboxing sounds into musical notation',
-    paper: '/files/Golev - ML for Beatboxing.pdf',
+    links: [
+      { type: 'paper', url: '/files/Golev - ML for Beatboxing.pdf', icon: FileText, label: 'paper' },
+    ],
   },
   {
     id: 'tigercrush',
@@ -53,7 +75,10 @@ const PROJECTS = [
     tags: ['web-dev', 'full-stack'],
     authors: 'Oleg Golev, Alan Ding, and Gerald Huang',
     description: 'Anonymous crush-matching platform for Princeton students, gathered 1000+ users and featured in The Daily Princetonian',
-    github: 'https://github.com/alanjding/TigerCrush',
+    links: [
+      { type: 'code', url: 'https://github.com/alanjding/TigerCrush', icon: ExternalLink, label: 'code' },
+      { type: 'blog', url: 'https://www.dailyprincetonian.com/article/2020/11/isolated-students-turn-to-tiger-crush', icon: BookOpen, label: 'blog' },
+    ],
   },
   {
     id: 'mealqueue',
@@ -63,6 +88,7 @@ const PROJECTS = [
     tags: ['web-dev', 'full-stack'],
     authors: 'Anthony Hein, Oleg Golev, Rahul Jagetia, Aryan Bhasin, Manan Goenka',
     description: 'Digital ordering queue system for Princeton University\'s Late Meal cafe, replacing pen-and-paper workflow with real-time order management between students, chefs, and admins.',
+    links: [],
   },
 ];
 
@@ -127,35 +153,22 @@ export function ProjectsSection() {
                 {project.description}
               </p>
 
-              <div className="flex gap-2 mt-auto">
-                {project.paper && (
+              <div className="flex gap-2 mt-auto flex-wrap">
+                {project.links.map((link) => (
                   <a 
-                    href={project.paper} 
+                    key={link.type}
+                    href={link.url} 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="no-underline cursor-pointer"
-                    onClick={() => trackProjectClick(project.title, 'paper')}
+                    onClick={() => trackProjectClick(project.title, link.type)}
                   >
                     <Button variant="outline" size="sm" className="cursor-pointer inline-flex items-center gap-1 px-3 py-1 text-xs font-medium text-black bg-transparent border border-gray-300 rounded hover:bg-gray-50 transition-colors duration-300">
-                      <FileText className="w-3 h-3" />
-                      paper
+                      <link.icon className="w-3 h-3" />
+                      {link.label}
                     </Button>
                   </a>
-                )}
-                {project.github && (
-                  <a 
-                    href={project.github} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="no-underline cursor-pointer"
-                    onClick={() => trackProjectClick(project.title, 'code')}
-                  >
-                    <Button variant="outline" size="sm" className="cursor-pointer inline-flex items-center gap-1 px-3 py-1 text-xs font-medium text-black bg-transparent border border-gray-300 rounded hover:bg-gray-50 transition-colors duration-300">
-                      <ExternalLink className="w-3 h-3" />
-                      code
-                    </Button>
-                  </a>
-                )}
+                ))}
               </div>
             </div>
           </article>

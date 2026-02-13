@@ -21,7 +21,7 @@ export function trackEvent(eventName: string, params?: Record<string, unknown>) 
 export const trackPaperClick = (title: string, venue: string) => 
   trackEvent('paper_click', { paper_title: title, paper_venue: venue });
 
-export const trackProjectClick = (title: string, type: 'paper' | 'code') => 
+export const trackProjectClick = (title: string, type: 'paper' | 'code' | 'blog') => 
   trackEvent('project_click', { project_title: title, click_type: type });
 
 export const trackLinkClick = (name: string, url: string) => 
