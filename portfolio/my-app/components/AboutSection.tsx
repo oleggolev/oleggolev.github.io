@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Mail, GraduationCap, Github, Linkedin, Twitter, FileText } from "lucide-react";
+import { Mail, GraduationCap, Github, Linkedin, Twitter, FileText, Link } from "lucide-react";
 import { SocialLink } from "./shared/SocialLink";
 
 const socialLinks = [
@@ -11,17 +11,18 @@ const socialLinks = [
   { href: "https://www.linkedin.com/in/oleg-golev/", icon: Linkedin, label: "LinkedIn" },
   { href: "https://x.com/oleg_golev", icon: Twitter, label: "X (Twitter)" },
   { href: "https://substack.com/@oleggolev", icon: FileText, label: "Substack" },
+  { href: "https://linktr.ee/oleggolev", icon: Link, label: "More Links" },
 ];
 
 const linkClass = "font-semibold text-[#0eb5ff] hover:underline decoration-2 underline-offset-4 transition-all cursor-pointer";
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-16 px-8 bg-[rgb(249,249,249)] animate-fade-in-up">
+    <section id="about" className="py-16 px-4 sm:px-8 bg-[rgb(249,249,249)] animate-fade-in-up">
       <div className="max-w-6xl mx-auto flex flex-wrap gap-12 justify-center items-start">
         {/* Profile Image */}
         <div className="flex flex-col items-center w-full sm:w-1/3">
-          <div className="relative w-[85%] aspect-square">
+          <div className="relative w-[70%] sm:w-[85%] aspect-square">
             <Image
               src="/images/profile.png"
               alt="Oleg Golev"
@@ -40,10 +41,10 @@ export function AboutSection() {
         </div>
         
         {/* Bio Content */}
-        <div className="flex-1 max-w-[60%] pt-4">
-          <h1 className="text-4xl font-bold mb-6 text-gray-900 tracking-tight">Oleg Golev</h1>
+        <div className="flex-1 w-full sm:max-w-[60%] pt-0 sm:pt-4">
+          <h1 className="text-3xl sm:text-4xl font-bold mb-6 text-gray-900 tracking-tight">Oleg Golev</h1>
           
-          <div className="space-y-5 text-lg leading-relaxed">
+          <div className="space-y-5 text-base sm:text-lg leading-relaxed">
             <p>
               Currently <span className="font-semibold text-[#2563eb]">Product Lead, AI</span> at{" "}
               <a href="https://sentient.xyz/" target="_blank" rel="noopener noreferrer" className={linkClass}>
@@ -64,6 +65,7 @@ export function AboutSection() {
               , working on trading, fintech, and low-latency automation & infrastructure.
               For full work history, visit my{" "}
               <a href="https://www.linkedin.com/in/oleg-golev/" target="_blank" rel="noopener noreferrer" className={linkClass}>LinkedIn</a>
+              .
             </p>
             
             <p>
