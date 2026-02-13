@@ -10,35 +10,32 @@ A clean, minimalist researcher portfolio website built with React, Next.js, and 
 - **UI Components**: shadcn/ui
 - **Icons**: Lucide React
 - **Font**: Barlow (Google Fonts)
+- **Hosting**: GitHub Pages (automated deployment)
 
 ## Project Structure
 
 ```
-portfolio/my-app/
-├── app/                    # Next.js app router
-│   ├── layout.tsx         # Root layout with Barlow font
-│   ├── page.tsx           # Main page composing all sections
-│   └── globals.css        # Global styles
-├── components/            # React components
-│   ├── Header.tsx         # Sticky navigation header
-│   ├── AboutSection.tsx   # Profile and bio section
-│   ├── ResearchSection.tsx # Research papers with filters
-│   ├── ProjectsSection.tsx # Projects grid
-│   ├── ExperienceSection.tsx # Experience timeline
-│   ├── CourseworkSection.tsx # Coursework list
-│   └── Footer.tsx         # Site footer
-├── components/ui/         # shadcn/ui components
-│   ├── button.tsx
-│   ├── card.tsx
-│   ├── badge.tsx
-│   └── separator.tsx
-├── public/               # Static assets
-│   ├── images/          # Profile photos, project images
-│   └── files/           # PDFs and documents
-├── lib/
-│   └── utils.ts         # Utility functions (cn helper)
-├── next.config.ts       # Next.js config for static export
-└── package.json
+/
+├── .github/workflows/      # GitHub Actions deployment workflow
+│   └── deploy.yml
+├── portfolio/my-app/       # Next.js application source
+│   ├── app/               # Next.js app router
+│   │   ├── layout.tsx    # Root layout with Barlow font
+│   │   ├── page.tsx      # Main page composing all sections
+│   │   └── globals.css   # Global styles
+│   ├── components/       # React components
+│   │   ├── Header.tsx
+│   │   ├── AboutSection.tsx
+│   │   ├── ResearchSection.tsx
+│   │   ├── ProjectsSection.tsx
+│   │   ├── MiscSection.tsx
+│   │   └── Footer.tsx
+│   ├── components/ui/    # shadcn/ui components
+│   ├── public/           # Static assets (images, PDFs)
+│   ├── lib/
+│   ├── next.config.ts    # Next.js static export config
+│   └── package.json
+└── README.md
 ```
 
 ## Development
@@ -53,18 +50,77 @@ npm install
 # Start development server
 npm run dev
 
-# Build for production
+# Build for production locally
 npm run build
 ```
 
-## Deployment
+## GitHub Pages Deployment
 
-The site is configured for GitHub Pages static hosting:
+This repository is configured for automatic deployment to GitHub Pages using GitHub Actions.
 
-1. Run `npm run build` in the `portfolio/my-app` directory
-2. The build output goes to `portfolio/my-app/dist/`
-3. Copy the contents of `dist/` to the repository root
-4. Push to GitHub - the site will be live at https://oleggolev.github.io
+### Setup (One-time)
+
+1. **Enable GitHub Pages in repository settings:**
+   - Go to Settings > Pages
+   - Source: Select "GitHub Actions"
+
+2. **Ensure the workflow has correct permissions:**
+   - Go to Settings > Actions > General
+   - Workflow permissions: Select "Read and write permissions"
+
+### How Deployment Works
+
+The `.github/workflows/deploy.yml` workflow automatically:
+1. Triggers on every push to `main` or `master`
+2. Builds the Next.js app with static export
+3. Deploys to GitHub Pages
+
+### Manual Deployment
+
+To deploy manually (if you want to push static files instead):
+
+```bash
+# Build locally
+cd portfolio/my-app
+npm run build
+
+# Copy dist/ contents to repo root
+cp -r dist/* ../../
+
+# Commit and push
+git add .
+git commit -m "Deploy to GitHub Pages"
+git push
+```
+
+### Configuration Details
+
+**Next.js Config** (`portfolio/my-app/next.config.ts`):
+- `output: 'export'` - Generates static HTML
+- `distDir: 'dist'` - Output directory
+- `images.unoptimized: true` - Required for static export
+- No `basePath` needed (user site serves from root)
+
+**GitHub Actions Workflow** (`.github/workflows/deploy.yml`):
+- Uses Node.js 20
+- Runs in `portfolio/my-app` working directory
+- Caches npm dependencies
+- Deploys from `portfolio/my-app/dist`
+
+### Troubleshooting
+
+**Build fails in GitHub Actions:**
+- Check that `portfolio/my-app/package-lock.json` is committed
+- Verify Node.js version compatibility (using 20)
+
+**Assets not loading:**
+- Ensure `next.config.ts` doesn't have incorrect `basePath` or `assetPrefix`
+- Check browser console for 404 errors
+
+**Site not updating:**
+- Check Actions tab for deployment status
+- Clear browser cache or try incognito mode
+- Verify GitHub Pages source is set to "GitHub Actions"
 
 ## Design Features
 
@@ -80,13 +136,14 @@ The site is configured for GitHub Pages static hosting:
 1. **About**: Profile photo, social links, bio
 2. **Research**: Filterable paper cards with thumbnails, tags, and PDF links
 3. **Projects**: Grid of project cards with descriptions and links
-4. **Experience**: Timeline of work experience (placeholder content)
-5. **Coursework**: Academic projects with language/technology tags
+4. **Misc**: Additional projects, coursework, and experience
+5. **Footer**: Contact information
 
-## Content
+## Content Updates
 
-All content is stored in the component files as data arrays. To update:
+All content is stored in the component files as data arrays:
 - Papers: Edit `ResearchSection.tsx` papers array
 - Projects: Edit `ProjectsSection.tsx` projects array
-- Coursework: Edit `CourseworkSection.tsx` coursework array
-- Experience: Edit `ExperienceSection.tsx` experiences array
+- Misc items: Edit `MiscSection.tsx` misc array
+
+After editing, commit and push - the site will automatically redeploy.
