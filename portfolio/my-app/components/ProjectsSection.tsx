@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { FileText, ExternalLink } from "lucide-react";
 import { SectionContainer } from "./shared/SectionContainer";
+import { trackProjectClick, trackLinkClick } from "@/lib/utils";
 
 const TAG_COLORS: Record<string, string> = {
   "web-dev": "#ff0000",
@@ -132,7 +133,13 @@ export function ProjectsSection() {
 
               <div className="flex gap-2 mt-auto">
                 {project.paper && (
-                  <a href={project.paper} target="_blank" rel="noopener noreferrer" className="no-underline cursor-pointer">
+                  <a 
+                    href={project.paper} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="no-underline cursor-pointer"
+                    onClick={() => trackProjectClick(project.title, 'paper')}
+                  >
                     <Button variant="outline" size="sm" className="cursor-pointer inline-flex items-center gap-1 px-3 py-1 text-xs font-medium text-black bg-transparent border border-gray-300 rounded hover:bg-gray-50 transition-colors duration-300">
                       <FileText className="w-3 h-3" />
                       paper
@@ -140,7 +147,13 @@ export function ProjectsSection() {
                   </a>
                 )}
                 {project.github && (
-                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="no-underline cursor-pointer">
+                  <a 
+                    href={project.github} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="no-underline cursor-pointer"
+                    onClick={() => trackProjectClick(project.title, 'code')}
+                  >
                     <Button variant="outline" size="sm" className="cursor-pointer inline-flex items-center gap-1 px-3 py-1 text-xs font-medium text-black bg-transparent border border-gray-300 rounded hover:bg-gray-50 transition-colors duration-300">
                       <ExternalLink className="w-3 h-3" />
                       code
@@ -163,6 +176,7 @@ export function ProjectsSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#0eb5ff] hover:underline transition-colors cursor-pointer"
+                onClick={() => trackLinkClick(project.title, project.url)}
               >
                 {project.title}
               </a>

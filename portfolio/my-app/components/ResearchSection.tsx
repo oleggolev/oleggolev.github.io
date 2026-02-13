@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { FileText } from "lucide-react";
 import { SectionContainer } from "./shared/SectionContainer";
+import { trackPaperClick } from "@/lib/utils";
 
 const TAG_COLORS: Record<string, string> = {
   hci: "#ffa563",
@@ -45,6 +46,10 @@ const PAPERS = [
 ];
 
 export function ResearchSection() {
+  const handlePaperClick = (paper: typeof PAPERS[0]) => {
+    trackPaperClick(paper.title, paper.venue);
+  };
+
   return (
     <SectionContainer id="research" className="bg-white" delay={100}>
       <h2 className="text-2xl font-semibold mb-2">✨ selected research</h2>
@@ -97,6 +102,7 @@ export function ResearchSection() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="no-underline cursor-pointer"
+                  onClick={() => handlePaperClick(paper)}
                 >
                   <Button
                     variant="outline"

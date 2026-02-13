@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn, trackSocialClick } from "@/lib/utils";
 import { LucideIcon } from "lucide-react";
 
 interface SocialLinkProps {
@@ -16,6 +16,10 @@ export function SocialLink({
   external = true,
   className 
 }: SocialLinkProps) {
+  const handleClick = () => {
+    trackSocialClick(label);
+  };
+
   return (
     <a
       href={href}
@@ -26,6 +30,7 @@ export function SocialLink({
         className
       )}
       aria-label={label}
+      onClick={handleClick}
     >
       <Icon className="w-7 h-7" />
     </a>

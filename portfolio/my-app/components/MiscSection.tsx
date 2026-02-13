@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Music, Drum, Mic2, ChevronDown, ChevronUp } from "lucide-react";
 import { SectionContainer } from "./shared/SectionContainer";
+import { trackCardClick, trackVideoPlay } from "@/lib/utils";
 
 const CATEGORIES = [
   {
@@ -43,7 +44,19 @@ export function MiscSection() {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
   const handleCardClick = (categoryId: string) => {
-    setActiveCategory(activeCategory === categoryId ? null : categoryId);
+    const newCategory = activeCategory === categoryId ? null : categoryId;
+    setActiveCategory(newCategory);
+    
+    if (newCategory) {
+      const category = CATEGORIES.find(c => c.id === categoryId);
+      if (category) {
+        trackCardClick(category.title, 'misc');
+      }
+    }
+  };
+
+  const handleVideoPlay = (videoTitle: string, categoryTitle: string) => {
+    trackVideoPlay(videoTitle, categoryTitle);
   };
 
   return (
@@ -96,6 +109,7 @@ export function MiscSection() {
                           className="w-full h-full rounded-lg"
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                           allowFullScreen
+                          onLoad={() => handleVideoPlay(video.title, category.title)}
                         />
                       </div>
                     ))}
@@ -123,6 +137,10 @@ export function MiscSection() {
                   className="w-full h-full rounded-lg"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
+                  onLoad={() => {
+                    const category = CATEGORIES.find(c => c.id === activeCategory);
+                    if (category) handleVideoPlay(video.title, category.title);
+                  }}
                 />
               </div>
             ))}
