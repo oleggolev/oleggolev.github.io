@@ -3,12 +3,11 @@ import { trackLinkClick, trackSocialClick } from '@/lib/utils';
 
 const socialLinks = [
   { href: 'mailto:ogolev@alumni.princeton.edu', icon: Mail, label: 'Email', external: false },
-  { href: 'https://scholar.google.com/citations?user=keIjyhQAAAAJ&hl=en', icon: GraduationCap, label: 'Google Scholar' },
-  { href: 'https://github.com/oleggolev', icon: Github, label: 'GitHub' },
   { href: 'https://www.linkedin.com/in/oleg-golev/', icon: Linkedin, label: 'LinkedIn' },
   { href: 'https://x.com/oleg_golev', icon: Twitter, label: 'X (Twitter)' },
+  { href: 'https://scholar.google.com/citations?user=keIjyhQAAAAJ&hl=en', icon: GraduationCap, label: 'Google Scholar' },
+  { href: 'https://github.com/oleggolev', icon: Github, label: 'GitHub' },
   { href: 'https://substack.com/@oleggolev', icon: FileText, label: 'Substack' },
-  { href: 'https://linktr.ee/oleggolev', icon: Link, label: 'More Links' },
 ];
 
 const linkClass = 'font-semibold text-[#0eb5ff] hover:underline decoration-2 underline-offset-4 transition-all cursor-pointer';
@@ -92,7 +91,7 @@ export function AboutSection() {
           
           <div className="space-y-5 text-base sm:text-lg leading-relaxed">
             <p>
-              Currently <span className="font-semibold text-[#2563eb]">Product Lead, AI</span> at{' '}
+              Currently <span className="font-semibold text-[#2563eb]">building in stealth</span>. Formerly Head of Product at {' '}
               <TrackedLink href="https://sentient.xyz/" linkName="Sentient Labs">
                 Sentient Labs
               </TrackedLink>
@@ -100,7 +99,7 @@ export function AboutSection() {
             </p>
             
             <p>
-              Previously <span className="font-semibold text-[#2563eb]">Platform Engineer</span> at{' '}
+              Previously <span className="font-semibold text-[#2563eb]">engineering</span> at{' '}
               <TrackedLink href="https://www.deshaw.com/" linkName="D. E. Shaw">D. E. Shaw</TrackedLink>
               ,{' '}
               <TrackedLink href="https://www.arcesium.com/" linkName="Arcesium">Arcesium</TrackedLink>
