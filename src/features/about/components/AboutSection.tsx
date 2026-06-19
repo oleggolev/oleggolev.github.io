@@ -1,4 +1,4 @@
-import { Mail, GraduationCap, Github, Linkedin, Twitter, FileText, Link } from 'lucide-react';
+import { Mail, GraduationCap, Github, Linkedin, Twitter, FileText } from 'lucide-react';
 import { trackLinkClick, trackSocialClick } from '@/lib/utils';
 
 const socialLinks = [
@@ -91,7 +91,7 @@ export function AboutSection() {
           
           <div className="space-y-5 text-base sm:text-lg leading-relaxed">
             <p>
-              Currently <span className="font-semibold text-[#2563eb]">building in stealth</span>. Formerly Head of Product at {' '}
+              Currently <span className="font-semibold text-[#2563eb]">building in stealth</span>. Formerly <span className="font-semibold text-[#2563eb]">Head of Product</span> at {' '}
               <TrackedLink href="https://sentient.xyz/" linkName="Sentient Labs">
                 Sentient Labs
               </TrackedLink>

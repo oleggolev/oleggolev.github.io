@@ -13,7 +13,7 @@ const PAPERS = [
   {
     id: 'cryptoanalystbench',
     title: 'CryptoAnalystBench: Failures in Multi-Tool Long-Form LLM Analysis',
-    venue: 'arXiv Preprint',
+    venue: 'KDD',
     year: '2026',
     image: '/images/cryptoanalystbench.png',
     tag: 'ml' as const,
